@@ -5,7 +5,7 @@ import irclib
 import ircbot
 import time
 
-ircsrv = "irc.gringao.fr"
+ircsrv = "irc.domain.fr"
 port = 6667
 nick = "nickname"
 chan = "#Channel"
@@ -24,7 +24,7 @@ class Bot(ircbot.SingleServerIRCBot):
 	def on_pubmsg(self, serv, ev):
 		message = ev.arguments()[0]
 		if message.startswith("!help"):
-			serv.privmsg(chan, "Commandes disponibles : biere, salope, spam")
+			serv.privmsg(chan, "Commandes disponibles : biere, repeat, spam")
 			return
 		elif message.startswith("!biere"):
 			serv.privmsg(chan, "et une biere pour "+nick +" !")
